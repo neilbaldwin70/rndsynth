@@ -6,7 +6,8 @@ import random
 import math
 import sys
 
-random.seed(a=None,version=2)
+random.seed(a=None ,version=2)
+
 
 class dp(NamedTuple):
     parameterType: str
@@ -16,16 +17,6 @@ class dp(NamedTuple):
     canModulate: bool
     group: bool
 
-def int32(x):
-  if x>0xFFFFFFFF:
-    raise OverflowError
-  if x>0x7FFFFFFF:
-    x=int(0x100000000-x)
-    if x<2147483648:
-      return -x
-    else:
-      return -2147483648
-  return x
 
 def htosi(val):
     uintval = int(val,16)
@@ -37,8 +28,8 @@ def htosi(val):
 def hex2(n):
     return hex(n & 0xFFFFFFFF)
 
-def rndSelection(list):
-    return list[random.randint(0,len(list)-1)]
+def rndSelection(rlist):
+    return rlist[random.randint(0, len(rlist) - 1)]
 
 def addTag(_parent,_tag,_text):
     _result = ET.SubElement(_parent,_tag)
@@ -224,15 +215,15 @@ modKnobDestinationsRingMod = [
 
 
 
-def randomParameter(p):
-    t = delugeParameters.get(p)
-    if t[3] == True:
+def randomParameter(rp):
+    t = delugeParameters.get(rp)
+    if t[3]:
         if t[0] == "TEXT":
-            return (random.choice(t[2]))
+            return random.choice(t[2])
         elif t[0] == "INT":
             return str((random.randint(t[2][0], t[2][1])))
         elif t[0] == "LINT" or t[0] == "SINT":
-            return (random.choice(t[2]))
+            return random.choice(t[2])
     else:
         if t[0] == "TEXT":
             return str(t[2][0])
