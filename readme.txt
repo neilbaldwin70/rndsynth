@@ -4,6 +4,8 @@ Versions:
 	- Added option to randomise modulation FX (chorus etc.) --rndModFX <True/False>
 	- Fixed a couple of bugs which stopped overriding some default parameters
 	- Lowered default delayLimit setting (delay feedback)
+03-09-19 V0.12
+    - added randomisation of modFX parameters that I'd initially missed
 
 
 

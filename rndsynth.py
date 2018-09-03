@@ -404,7 +404,7 @@ oMin = -octaveRange * 12
 
 if fileNameBase == "" or len(sys.argv) < 2:
     print()
-    print("RNDSYNTH : Deluge random Synth patch generator V0.11")
+    print("RNDSYNTH : Deluge random Synth patch generator V0.12")
     print("---------------------------------------------------")
     print()
     print("Usage: rndsynth.py --outputBase <nnn> [--options]")
